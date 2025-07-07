@@ -10,6 +10,12 @@ pipeline {
             }
         }
 
+        stage("Checkout SCM") {
+            steps {
+                checkout scm
+            }
+        }
+
         stage("Build") {
             steps {
                 dir('Simple_Demo') { 
