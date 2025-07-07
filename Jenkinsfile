@@ -12,13 +12,17 @@ pipeline {
 
         stage("Build") {
             steps {
-                sh "mvn clean install"
+                dir('Simple_Demo') { 
+                    sh "mvn clean install"
+                }
             }
         }
 
         stage("Test") {
             steps {
-                sh "mvn test"
+                dir('Simple_Demo') { 
+                    sh "mvn test"
+                }
             }
         }
 
